@@ -5,19 +5,7 @@ use warnings;
 use base 'Mojo::Base';
 use MojoX::Session;
 
-our $VERSION = '0.0.2';
-
-#require Exporter;
-#our @ISA = qw(Exporter);
-# Items to export into callers namespace by default. Note: do not export
-# names by default without a very good reason. Use EXPORT_OK instead.
-# Do not simply export all your public functions/methods/constants.
-# This allows declaration	use MojoX::Auth ':all';
-# If you do not need this, moving things directly into @EXPORT or @EXPORT_OK
-# will save memory.
-#our %EXPORT_TAGS = ( 'all' => [ qw( ) ] );
-#our @EXPORT_OK = ( @{ $EXPORT_TAGS{'all'} } );
-#our @EXPORT = qw();
+our $VERSION = '0.0.3';
 
 __PACKAGE__->attr(logged_in => 0);
 __PACKAGE__->attr(loader    => sub { Mojo::Loader->new });
@@ -103,13 +91,11 @@ sub _authenticate {
 
 =head1 NAME
 
-MojoX::Auth - Perl extension for login authentication for Mojolicious
+MojoX::Auth::Simple - Perl extension for login authentication for Mojolicious
 
 =head1 VERSION
 
-Version 0.02
-
-
+Version 0.03
 
 =head1 SYNOPSIS
 
@@ -182,7 +168,7 @@ Version 0.02
 The aim of this mobule is to provide a framework to allow a simple 
 authentication model for Mojolicious.
 
-Ideally this should be a plugin like MojoX::Session.
+This module will change and become a plugin like MojoX::Session.
 
 =head2 EXPORT
 
@@ -190,39 +176,41 @@ None by default.
 
 =head1 SUBROUTINES/METHODS
 
-L<MojoX::Auth> inherits all methods from L<Mojo::Base> and implements the following new ones.
+L<MojoX::Auth::Simple> inherits all methods from L<Mojo::Base> and implements the following new ones.
 
 =head2 C<new>
 
     my $auth = MojoX::Auth::Simple->new();
 
-    Returns new L<MojoX::Auth> object.
+Returns new L<MojoX::Auth> object.
 
 =head2 C<log_in>
 
     my $auth = MojoX::Auth::Simple->new();
+    $auth->log_in();
 
-    Sets the logged_in key in the session store to 'true' and adds the uid key in the session store to the uid of the logged in user.
+Sets the logged_in key in the session store to 'true' and adds the uid key
+in the session store to the uid of the logged in user.
 
 =head2 C<log_out>
 
     $auth->load($session);
     $auth->log_out();
 
-    Sets the logged_in key in the session store to 'false'.
+Sets the logged_in key in the session store to 'false'.
 
 =head2 C<is_logged_in>
 
     $auth->load($session);
     $name = $auth->is_logged_in();
 
-    Returns the name or uid of the user that is logged in, or an empty string if they are not.
+Returns the name or uid of the user that is logged in, or an empty string if they are not.
 
 =head2 C<load>
 
     $auth->load($session);
 
-    Adds the current session to the auth object to use it as a persistant store.
+Adds the current session to the auth object to use it as a persistant store.
 
 =head1 SEE ALSO
 
