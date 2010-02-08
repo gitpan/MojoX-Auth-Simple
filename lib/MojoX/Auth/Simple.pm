@@ -5,7 +5,7 @@ use warnings;
 use base 'Mojo::Base';
 use MojoX::Session;
 
-our $VERSION = '0.0.3';
+our $VERSION = '0.0.4';
 
 __PACKAGE__->attr(logged_in => 0);
 __PACKAGE__->attr(loader    => sub { Mojo::Loader->new });
@@ -95,7 +95,7 @@ MojoX::Auth::Simple - Perl extension for login authentication for Mojolicious
 
 =head1 VERSION
 
-Version 0.03
+Version 0.04
 
 =head1 SYNOPSIS
 
