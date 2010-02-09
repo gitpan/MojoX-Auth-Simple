@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name:               MojoX-Auth-Simple
-version:            0.04
+version:            0.04.02
 abstract:           Perl extension for simple login authentication for Mojolicious web applications
 author:
     - Kim Hawtin <kim@hawtin.net.au>
@@ -11,15 +11,11 @@ configure_requires:
 build_requires:
     ExtUtils::MakeMaker:  0
 requires:
-    MojoX::Session 0
-    Mojo:          0.999914
-    Test::More:    0
+    MojoX::Session: 0
+    Mojo:           0.999914
+    Test::More:     0
 no_index:
     directory:
         - t
         - inc
-generated_by:       ExtUtils::MakeMaker version 6.50
-meta-spec:
-    url:      http://module-build.sourceforge.net/META-spec-v1.4.html
-    version:  1.4
 
