@@ -219,7 +219,7 @@ the basic auth info in the session hash in the stash.
 
 =head1 AUTHOR
 
-Kim Hawtin, E<lt>kim@hawtin.net.au<gt>
+Kim Hawtin
 
 =head1 BUGS
 
